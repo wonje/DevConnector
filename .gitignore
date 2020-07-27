@@ -3,3 +3,9 @@ node_modules/
 
 # vs code config directory
 .vscode/
+
+# ignore files
+.prettierrc
+
+# ignore configs
+default.json
