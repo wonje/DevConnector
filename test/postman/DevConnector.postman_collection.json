@@ -34,7 +34,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"name\": \"John Test\",\n    \"email\": \"jtest@gmail.com\",\n    \"password\": \"123456\"\n}"
+              "raw": "{\n    \"name\": \"Steve Smith\",\n    \"email\": \"steve@gmail.com\",\n    \"password\": \"123456\"\n}"
             },
             "url": {
               "raw": "http://localhost:5000/api/users",
@@ -110,7 +110,215 @@
     },
     {
       "name": "Posts",
-      "item": [],
+      "item": [
+        {
+          "name": "Add post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-auth-token",
+                "value": "{{access_token}}",
+                "description": "Access Token",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "JSON Content\n",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"text\": \"Hello World! This is the text Text for post for John Doe!\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/posts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all posts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-auth-token",
+                "value": "{{access_token}}",
+                "description": "Access Token",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/posts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get post by id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-auth-token",
+                "value": "{{access_token}}",
+                "description": "Access Token",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/posts/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete post",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-auth-token",
+                "value": "{{access_token}}",
+                "description": "Access Token",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/posts/5f30957a78fbdd2afab8c510",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts", "5f30957a78fbdd2afab8c510"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Like post",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-auth-token",
+                "value": "{{access_token}}",
+                "description": "Access Token",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/posts/like/5f30953978fbdd2afab8c50f",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts", "like", "5f30953978fbdd2afab8c50f"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unlike post",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-auth-token",
+                "value": "{{access_token}}",
+                "description": "Access Token",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/posts/unlike/5f30953978fbdd2afab8c50f",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts", "unlike", "5f30953978fbdd2afab8c50f"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add comment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-auth-token",
+                "value": "{{access_token}}",
+                "description": "Access Token",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "JSON Content\n",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"text\": \"Delete Me!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/posts/comment/5f30953978fbdd2afab8c50f",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts", "comment", "5f30953978fbdd2afab8c50f"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete comment",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-auth-token",
+                "value": "{{access_token}}",
+                "description": "Access Token",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/posts/comment/5f30953978fbdd2afab8c50f/5f309e000ba6e02e22f849cf",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": [
+                "api",
+                "posts",
+                "comment",
+                "5f30953978fbdd2afab8c50f",
+                "5f309e000ba6e02e22f849cf"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
       "protocolProfileBehavior": {}
     },
     {
@@ -135,7 +343,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"company\": \"TechSoft INC\",\n    \"status\": \"Junior Developer\",\n    \"website\": \"https://www.techsoft.com\",\n    \"skills\": \"HTML, CSS, JS\"\n}"
+              "raw": "{\n    \"company\": \"Test Company\",\n    \"status\": \"Developer\",\n    \"skills\": \"HTML, CSS, JS, PHP, Python\"\n}"
             },
             "url": {
               "raw": "http://localhost:5000/api/profile",
@@ -207,6 +415,150 @@
               "host": ["localhost"],
               "port": "5000",
               "path": ["api", "profile", "user", "{{user_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete profile & user",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-auth-token",
+                "value": "{{access_token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/profile",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "profile"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add experience",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "JSON Content\n",
+                "type": "text"
+              },
+              {
+                "key": "x-auth-token",
+                "value": "{{access_token}}",
+                "description": "Access Token",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Web Developer\",\n    \"company\": \"Tech Guy Web Solutions\",\n    \"location\": \"Boston, MA\",\n    \"from\": \"1-5-2006\",\n    \"to\": \"1-7-2009\",\n    \"description\": \"Full stack web dev\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/profile/experience",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "profile", "experience"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add education",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "description": "JSON Content\n",
+                "key": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "description": "Access Token",
+                "key": "x-auth-token",
+                "type": "text",
+                "value": "{{access_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"school\": \"Test School\",\n    \"degree\": \"Associates Degree\",\n    \"fieldofstudy\": \"Computer Science\",\n    \"from\": \"8-08-2003\",\n    \"to\": \"3-4-2005\",\n    \"description\": \"Got Associates in computer science\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/profile/education",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "profile", "education"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete profile experience",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-auth-token",
+                "value": "{{access_token}}",
+                "description": "Access Token",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/profile/experience/1234",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "profile", "experience", "1234"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete profile education",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-auth-token",
+                "value": "{{access_token}}",
+                "description": "Access Token",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/profile/education/{{edu_id}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "profile", "education", "{{edu_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Github repos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/profile/github/wonje",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "profile", "github", "wonje"]
             }
           },
           "response": []
