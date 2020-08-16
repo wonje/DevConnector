@@ -1,0 +1,6 @@
+{
+  "mongoURI": "placeholder",
+  "jwtSecret": "placeholder",
+  "githubClientId": "placeholder",
+  "githubSecret": "placeholder"
+}
