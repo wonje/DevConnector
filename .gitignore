@@ -9,3 +9,6 @@ node_modules/
 
 # ignore configs
 default.json
+
+# DS
+.DS_Store
